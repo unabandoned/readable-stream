@@ -1,11 +1,10 @@
 'use strict'
 
 require('../common')
-const t = require('tap')
+const assert = require('assert')
 const util = require('util')
 const stream = require('../../lib/ours/index')
 const WritableStream = stream.Writable
-t.plan(1)
 const InternalStream = function () {
   WritableStream.call(this)
 }
@@ -31,5 +30,5 @@ for (let i = 0; i < 2000; i++) {
 }
 externalStream.end()
 externalStream.on('finish', () => {
-  t.equal(invocations, 2000)
+  assert.strictEqual(invocations, 2000)
 })

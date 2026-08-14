@@ -1,6 +1,5 @@
 'use strict'
 
-const tap = require('tap')
 const silentConsole = {
   log() {},
   error() {}
@@ -21,12 +20,3 @@ r.pipe(w)
 // end() after pipe should cause unhandled exception
 w.end()
 
-/* replacement start */
-process.on('beforeExit', (code) => {
-  if (code === 0) {
-    tap.pass('test succeeded')
-  } else {
-    tap.fail(`test failed - exited code ${code}`)
-  }
-})
-/* replacement end */

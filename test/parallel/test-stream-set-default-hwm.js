@@ -1,6 +1,5 @@
 'use strict'
 
-const tap = require('tap')
 const silentConsole = {
   log() {},
   error() {}
@@ -34,12 +33,3 @@ const t = new Transform({
 assert.strictEqual(t.writableHighWaterMark, 32 * 1000)
 assert.strictEqual(t.readableHighWaterMark, 32 * 1000)
 
-/* replacement start */
-process.on('beforeExit', (code) => {
-  if (code === 0) {
-    tap.pass('test succeeded')
-  } else {
-    tap.fail(`test failed - exited code ${code}`)
-  }
-})
-/* replacement end */

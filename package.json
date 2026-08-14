@@ -34,8 +34,8 @@
   },
   "scripts": {
     "prepare": "git config core.hooksPath .githooks || true",
-    "test": "tap --rcfile=./tap.yml test/parallel/test-*.js test/ours/test-*.js",
-    "coverage": "c8 -c ./c8.json tap --rcfile=./tap.yml test/parallel/test-*.js test/ours/test-*.js"
+    "test": "node --test test/parallel/test-*.js test/ours/test-*.js",
+    "coverage": "node --test --experimental-test-coverage test/parallel/test-*.js test/ours/test-*.js"
   },
   "dependencies": {
     "buffer": "npm:@unabandoned/buffer@^6",
@@ -45,9 +45,7 @@
   "devDependencies": {
     "@commitlint/cli": "21.2.2",
     "@commitlint/config-conventional": "21.2.2",
-    "@sinonjs/fake-timers": "15.4.0",
-    "c8": "12.0.0",
-    "tap": "16.3.10"
+    "@sinonjs/fake-timers": "15.4.0"
   },
   "engines": {
     "node": ">=22.12"

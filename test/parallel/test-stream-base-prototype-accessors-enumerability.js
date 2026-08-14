@@ -2,7 +2,6 @@
 
 'use strict'
 
-const tap = require('tap')
 const silentConsole = {
   log() {},
   error() {}
@@ -25,12 +24,3 @@ const TTY = internalBinding('tty_wrap').TTY
   assert.strictEqual(ttyIsEnumerable('_externalStream'), false)
 }
 
-/* replacement start */
-process.on('beforeExit', (code) => {
-  if (code === 0) {
-    tap.pass('test succeeded')
-  } else {
-    tap.fail(`test failed - exited code ${code}`)
-  }
-})
-/* replacement end */

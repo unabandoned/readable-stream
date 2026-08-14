@@ -1,6 +1,5 @@
 'use strict'
 
-const tap = require('tap')
 const silentConsole = {
   log() {},
   error() {}
@@ -32,12 +31,3 @@ for (const method of ['push', 'unshift']) {
   r.push('Hello, world')
 }
 
-/* replacement start */
-process.on('beforeExit', (code) => {
-  if (code === 0) {
-    tap.pass('test succeeded')
-  } else {
-    tap.fail(`test failed - exited code ${code}`)
-  }
-})
-/* replacement end */

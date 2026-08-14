@@ -1,11 +1,10 @@
 'use strict'
 
 require('../common')
-const t = require('tap')
+const assert = require('assert')
 const util = require('util')
 const fakeTimers = require('@sinonjs/fake-timers')
 const Transform = require('../../lib/ours/index').Transform
-t.plan(1)
 function MyTransform() {
   Transform.call(this)
 }
@@ -33,4 +32,4 @@ stream.on('data', function () {
 stream.emit('data')
 clock.runAll()
 clock.uninstall()
-t.ok(stream2DataCalled)
+assert.ok(stream2DataCalled)

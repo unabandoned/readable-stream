@@ -1,16 +1,15 @@
 'use strict'
 
-const t = require('tap')
+const assert = require('assert')
 const { codes: errors } = require('../../lib/ours/errors')
 function checkError(err, Base, name, code, message) {
-  t.ok(err instanceof Base)
-  t.equal(err.name, name)
-  t.equal(err.code, code)
-  t.equal(err.message, message)
+  assert.ok(err instanceof Base)
+  assert.strictEqual(err.name, name)
+  assert.strictEqual(err.code, code)
+  assert.strictEqual(err.message, message)
 }
 
 // Update this numbers based on the number of checkError below multiplied by the assertions within checkError
-t.plan(17 * 4)
 checkError(
   new errors.ERR_INVALID_ARG_VALUE('name', 0),
   TypeError,

@@ -21,7 +21,6 @@
 
 'use strict'
 
-const tap = require('tap')
 const silentConsole = {
   log() {},
   error() {}
@@ -116,12 +115,3 @@ assert.strictEqual(d.listeners('close').length, 0)
 assert.strictEqual(w.listeners('end').length, 0)
 assert.strictEqual(w.listeners('close').length, 0)
 
-/* replacement start */
-process.on('beforeExit', (code) => {
-  if (code === 0) {
-    tap.pass('test succeeded')
-  } else {
-    tap.fail(`test failed - exited code ${code}`)
-  }
-})
-/* replacement end */

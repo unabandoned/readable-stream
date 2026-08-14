@@ -21,7 +21,6 @@
 
 'use strict'
 
-const tap = require('tap')
 const silentConsole = {
   log() {},
   error() {}
@@ -69,12 +68,3 @@ process.on('exit', function () {
   assert(passed, 'Large buffer is not handled properly by Writable Stream')
 })
 
-/* replacement start */
-process.on('beforeExit', (code) => {
-  if (code === 0) {
-    tap.pass('test succeeded')
-  } else {
-    tap.fail(`test failed - exited code ${code}`)
-  }
-})
-/* replacement end */

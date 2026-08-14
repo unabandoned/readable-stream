@@ -21,7 +21,6 @@
 
 'use strict'
 
-const tap = require('tap')
 const silentConsole = {
   log() {},
   error() {}
@@ -328,12 +327,3 @@ class TestReader extends R {
   assert.deepStrictEqual(tr.setEncoding('utf8'), tr)
 }
 
-/* replacement start */
-process.on('beforeExit', (code) => {
-  if (code === 0) {
-    tap.pass('test succeeded')
-  } else {
-    tap.fail(`test failed - exited code ${code}`)
-  }
-})
-/* replacement end */

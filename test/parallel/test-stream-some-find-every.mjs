@@ -2,7 +2,6 @@ import * as common from '../common/index.mjs'
 import { setTimeout } from 'timers/promises'
 import { Readable } from '../../lib/ours/index.js'
 import assert from 'assert'
-import tap from 'tap'
 
 function oneTo5() {
   return Readable.from([1, 2, 3, 4, 5])
@@ -204,12 +203,3 @@ function oneTo5Async() {
   }
 }
 
-/* replacement start */
-process.on('beforeExit', (code) => {
-  if (code === 0) {
-    tap.pass('test succeeded')
-  } else {
-    tap.fail(`test failed - exited code ${code}`)
-  }
-})
-/* replacement end */

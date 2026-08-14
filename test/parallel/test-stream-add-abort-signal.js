@@ -13,7 +13,6 @@ if (typeof AbortSignal.abort !== 'function') {
 // Flags: --expose-internals
 
 ;('use strict')
-const tap = require('tap')
 const silentConsole = {
   log() {},
   error() {}
@@ -38,12 +37,3 @@ const { addAbortSignalNoValidate } = require('../../lib/internal/streams/add-abo
   assert.deepStrictEqual(r, addAbortSignalNoValidate('INVALID_SIGNAL', r))
 }
 
-/* replacement start */
-process.on('beforeExit', (code) => {
-  if (code === 0) {
-    tap.pass('test succeeded')
-  } else {
-    tap.fail(`test failed - exited code ${code}`)
-  }
-})
-/* replacement end */
