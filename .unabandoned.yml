@@ -1,0 +1,24 @@
+schema: 1
+
+package: "@unabandoned/readable-stream"
+
+upstream:
+  repo: nodejs/readable-stream
+  reason: "upstream release cadence stalled at 4.7.0 while its dependency tree ages; this fork carries it forward"
+
+summary: >-
+  Node.js's streams implemented as a user-land package, so browsers and older
+  Node versions get the current stream API.
+
+why-forked: >-
+  Forked to keep its dependency tree current — re-scoped onto the @unabandoned
+  buffer/events builds — and carried past the last upstream release so Renovate
+  can track the tree for consumers.
+
+status: active
+
+used-by:
+  - consumer: "@unabandoned/stream-http"
+    purpose: "Provides the readable/writable stream implementation the HTTP shim builds on."
+
+tags: [stream, readable, node-core-polyfill, browserify]
