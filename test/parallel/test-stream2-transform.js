@@ -21,7 +21,6 @@
 
 'use strict'
 
-const tap = require('tap')
 const silentConsole = {
   log() {},
   error() {}
@@ -505,12 +504,3 @@ const { PassThrough, Transform } = require('../../lib/ours/index')
   process.nextTick(() => s.write('secondLine'))
 }
 
-/* replacement start */
-process.on('beforeExit', (code) => {
-  if (code === 0) {
-    tap.pass('test succeeded')
-  } else {
-    tap.fail(`test failed - exited code ${code}`)
-  }
-})
-/* replacement end */

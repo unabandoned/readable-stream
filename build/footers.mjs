@@ -6,19 +6,10 @@ const testTicksDisableHook = `
   /* replacement end */
 `
 
-const testParallel = `
-  /* replacement start */
-  process.on('beforeExit', (code) => {
-    if(code === 0) {
-      tap.pass('test succeeded');
-    } else {
-      tap.fail(\`test failed - exited code \${code}\`);
-    }
-  });
-  /* replacement end */
-`
-
+// The suite runs under Node's built-in test runner (node --test), so there is
+// no tap reporter footer: node --test derives pass/fail from each file's exit
+// code. Only the samecb-singletick test keeps a beforeExit hook to disable its
+// async_hooks probe.
 export const footers = {
-  'test/parallel/test-stream-writable-samecb-singletick.js': testTicksDisableHook,
-  'test/parallel/.+': testParallel
+  'test/parallel/test-stream-writable-samecb-singletick.js': testTicksDisableHook
 }

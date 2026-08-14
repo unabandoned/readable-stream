@@ -1,7 +1,6 @@
 import '../common/index.mjs'
 import { Readable } from '../../lib/ours/index.js'
 import { deepStrictEqual, rejects, throws } from 'assert'
-import tap from 'tap'
 
 {
   // asIndexedPairs with a synchronous stream
@@ -71,12 +70,3 @@ import tap from 'tap'
   throws(() => Readable.from([1]).asIndexedPairs({ signal: true }), /ERR_INVALID_ARG_TYPE/)
 }
 
-/* replacement start */
-process.on('beforeExit', (code) => {
-  if (code === 0) {
-    tap.pass('test succeeded')
-  } else {
-    tap.fail(`test failed - exited code ${code}`)
-  }
-})
-/* replacement end */

@@ -1,7 +1,6 @@
 import { mustCall } from '../common/index.mjs'
 import { Readable } from '../../lib/ours/index.js'
 import assert from 'assert'
-import tap from 'tap'
 
 // These tests are manually ported from the draft PR for the test262 test suite
 // Authored by Rick Waldron in https://github.com/tc39/test262/pull/2818/files
@@ -163,12 +162,3 @@ import tap from 'tap'
   assert.strictEqual(descriptor.writable, true)
 }
 
-/* replacement start */
-process.on('beforeExit', (code) => {
-  if (code === 0) {
-    tap.pass('test succeeded')
-  } else {
-    tap.fail(`test failed - exited code ${code}`)
-  }
-})
-/* replacement end */

@@ -172,19 +172,19 @@ const testParallelBindings = [
 
 const testParallelHasOwn = ['Object.hasOwn\\(', 'Reflect.has(']
 
-const testParallelIncludeTap = [
+// The suite runs under Node's built-in test runner (node --test), so no tap
+// import is injected; the file's exit code is the pass/fail signal. Only the
+// silentConsole helper that some tests reference is added.
+const testParallelIncludeSilentConsole = [
   "('use strict')",
   `
     $1
 
-    const tap = require('tap');
     const silentConsole = { log() {}, error() {} };
   `
 ]
 
 const testParallelImportStreamInMjs = [" from 'stream';", "from '../../lib/ours/index.js';"]
-
-const testParallelImportTapInMjs = ["(from 'assert';)", "$1\nimport tap from 'tap';"]
 
 const testParallelDuplexFromBlob = [
   "const \\{ Blob \\} = require\\('buffer'\\);",
@@ -363,7 +363,7 @@ export const replacements = {
   'lib/stream/.+': [streamsRequireErrors, streamsRequirePrimordials, streamsRequireInternal, streamRequire],
   'test/common/index.js': [testCommonKnownGlobals],
   'test/parallel/.+': [
-    testParallelIncludeTap,
+    testParallelIncludeSilentConsole,
     testParallelRequireStream,
     testParallelRequireStreamConsumer,
     testParallelRequireStreamInternals,
@@ -371,7 +371,6 @@ export const replacements = {
     testParallelRequireStreamPromises,
     testParallelRequireStreamWeb,
     testParallelImportStreamInMjs,
-    testParallelImportTapInMjs,
     testParallelBindings,
     testParallelHasOwn,
     testParallelSilentConsole,
