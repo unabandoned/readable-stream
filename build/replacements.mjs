@@ -24,7 +24,7 @@ const internalStreamsAbortControllerPolyfill2 = [
   `
   'use strict'
 
-  const AbortController = globalThis.AbortController || require(\'abort-controller\').AbortController;
+  const AbortController = globalThis.AbortController;
 
   `
 ]
@@ -41,12 +41,12 @@ const internalStreamsInspectCustom = ['inspect.custom', "Symbol.for('nodejs.util
 
 const internalStreamsNoRequireAbortController = [
   'const \\{ AbortController \\} = .+',
-  'const AbortController = globalThis.AbortController || require(\'abort-controller\').AbortController;'
+  'const AbortController = globalThis.AbortController;'
 ]
 
 const internalStreamsNoRequireAbortController2 = [
   'const \\{ AbortController, AbortSignal \\} = .+',
-  'const AbortController = globalThis.AbortController || require(\'abort-controller\').AbortController;'
+  'const AbortController = globalThis.AbortController;'
 ]
 
 const internalStreamsRequireInternal = ["require\\('internal/([^']+)'\\)", "require('../$1')"]
@@ -146,7 +146,7 @@ const streamsRequireInternal = ["require\\('internal/(.+)'\\)", "require('../int
 
 const streamsRequirePrimordials = ['= primordials', "= require('../ours/primordials')"]
 
-const stringDecoderRequirePackage = ["require\\('string_decoder'\\)", "require('string_decoder/')"]
+const stringDecoderRequirePackage = ["require\\('string_decoder'\\)", "require('../../ours/string_decoder')"]
 
 const testCommonKnownGlobals = [
   'let knownGlobals = \\[(\\n\\s+)',
