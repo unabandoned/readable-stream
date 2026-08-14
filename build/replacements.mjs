@@ -148,6 +148,11 @@ const streamsRequirePrimordials = ['= primordials', "= require('../ours/primordi
 
 const stringDecoderRequirePackage = ["require\\('string_decoder'\\)", "require('../../ours/string_decoder')"]
 
+// Node >= 24 makes the static EventEmitter.listenerCount throw when the target
+// instance's own `listenerCount` has been removed; use the inherited
+// `listeners()` method, which is exactly what the legacy pipe path needs.
+const legacyListenerCount = ["EE\\.listenerCount\\(this, 'error'\\)", "this.listeners('error').length"]
+
 const testCommonKnownGlobals = [
   'let knownGlobals = \\[(\\n\\s+)',
   `
@@ -318,6 +323,7 @@ export const replacements = {
     stringDecoderRequirePackage
   ],
   'lib/internal/streams/.+': [
+    legacyListenerCount,
     internalStreamsRequireErrors,
     internalStreamsRequireEventEmitter,
     internalStreamsRequirePrimordials,
