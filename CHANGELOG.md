@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.8.1](https://github.com/unabandoned/readable-stream/compare/readable-stream-v4.8.0...readable-stream-v4.8.1) (2026-08-14)
+
+
+### Dependencies & maintenance
+
+* add .unabandoned.yml dashboard metadata ([#11](https://github.com/unabandoned/readable-stream/issues/11)) ([5e62aed](https://github.com/unabandoned/readable-stream/commit/5e62aed6f28dbac418d075ddc21f56947325f86c))
+* **deps:** update dependency c8 to v12 ([#8](https://github.com/unabandoned/readable-stream/issues/8)) ([26449e3](https://github.com/unabandoned/readable-stream/commit/26449e3ea81697027c0b46dd41a56f501a07fd3f))
+* **deps:** update unabandoned/.github digest to 461710f ([#13](https://github.com/unabandoned/readable-stream/issues/13)) ([d38420b](https://github.com/unabandoned/readable-stream/commit/d38420b448c7477f0b881c3ce962e2f530c4ef87))
+* **deps:** update unabandoned/.github digest to 88ce617 ([#6](https://github.com/unabandoned/readable-stream/issues/6)) ([ea569f0](https://github.com/unabandoned/readable-stream/commit/ea569f0b7e7887783f313d53d286d598a73c9ec0))
+* migrate the test suite from node-tap to node:test ([#12](https://github.com/unabandoned/readable-stream/issues/12)) ([410e8e6](https://github.com/unabandoned/readable-stream/commit/410e8e63c181ee4ef81d6aa4bf825196b8a9cffc))
+* pin reusable workflows to the @unabandoned/.github v1.0.0 release ([#14](https://github.com/unabandoned/readable-stream/issues/14)) ([88ef244](https://github.com/unabandoned/readable-stream/commit/88ef244bc8de0ee45cc6981fb54c927c8c9a63eb))
+
 ## [4.8.0](https://github.com/unabandoned/readable-stream/compare/readable-stream-v4.7.0...readable-stream-v4.8.0) (2026-08-14)
 
 
