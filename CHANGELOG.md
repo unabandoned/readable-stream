@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.8.3](https://github.com/unabandoned/readable-stream/compare/readable-stream-v4.8.2...readable-stream-v4.8.3) (2026-08-28)
+
+
+### Dependencies & maintenance
+
+* **deps:** update unabandoned/.github action to v1.0.3 ([#18](https://github.com/unabandoned/readable-stream/issues/18)) ([47c29aa](https://github.com/unabandoned/readable-stream/commit/47c29aa8205d8feb70d9a62eb87f84fe61ebf011))
+
 ## [4.8.2](https://github.com/unabandoned/readable-stream/compare/readable-stream-v4.8.1...readable-stream-v4.8.2) (2026-08-23)
 
 
