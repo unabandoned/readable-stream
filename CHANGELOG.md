@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.8.4](https://github.com/unabandoned/readable-stream/compare/readable-stream-v4.8.3...readable-stream-v4.8.4) (2026-09-21)
+
+
+### Bug Fixes
+
+* **test:** accept either error Node raises for an invalid encoding ([12109ae](https://github.com/unabandoned/readable-stream/commit/12109ae18bb63a490171278dda72cee5d110f1dc))
+
+
+### Dependencies & maintenance
+
+* **deps:** update unabandoned/.github action to v1.1.0 ([#20](https://github.com/unabandoned/readable-stream/issues/20)) ([677bd0d](https://github.com/unabandoned/readable-stream/commit/677bd0de94f88f9be9fc1910207f571d9e167511))
+
 ## [4.8.3](https://github.com/unabandoned/readable-stream/compare/readable-stream-v4.8.2...readable-stream-v4.8.3) (2026-08-28)
 
 
