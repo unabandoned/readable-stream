@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.8.5](https://github.com/unabandoned/readable-stream/compare/readable-stream-v4.8.4...readable-stream-v4.8.5) (2026-09-23)
+
+
+### Bug Fixes
+
+* stop dev-only commits from cutting releases ([#25](https://github.com/unabandoned/readable-stream/issues/25)) ([b45ac87](https://github.com/unabandoned/readable-stream/commit/b45ac87579525bf443c45787346539bd79682b1e))
+
 ## [4.8.4](https://github.com/unabandoned/readable-stream/compare/readable-stream-v4.8.3...readable-stream-v4.8.4) (2026-09-21)
 
 
