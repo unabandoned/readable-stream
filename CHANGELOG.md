@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.8.6](https://github.com/unabandoned/readable-stream/compare/readable-stream-v4.8.5...readable-stream-v4.8.6) (2026-10-09)
+
+
+### Bug Fixes
+
+* unwrap ESM-style process polyfills in internal streams ([#31](https://github.com/unabandoned/readable-stream/issues/31)) ([d1ef097](https://github.com/unabandoned/readable-stream/commit/d1ef097450551cf6c66ea38d8977fbed915e09fd))
+
 ## [4.8.5](https://github.com/unabandoned/readable-stream/compare/readable-stream-v4.8.4...readable-stream-v4.8.5) (2026-09-23)
 
 
