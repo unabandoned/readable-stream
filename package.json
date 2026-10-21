@@ -43,8 +43,8 @@
     "process": "^0.11.10"
   },
   "devDependencies": {
-    "@commitlint/cli": "21.2.3",
-    "@commitlint/config-conventional": "21.2.3",
+    "@commitlint/cli": "21.2.4",
+    "@commitlint/config-conventional": "21.2.4",
     "@sinonjs/fake-timers": "15.4.0"
   },
   "engines": {
