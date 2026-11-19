@@ -45,7 +45,7 @@
   "devDependencies": {
     "@commitlint/cli": "21.2.4",
     "@commitlint/config-conventional": "21.2.4",
-    "@sinonjs/fake-timers": "15.4.0"
+    "@sinonjs/fake-timers": "15.5.0"
   },
   "engines": {
     "node": ">=22.12"
